@@ -182,13 +182,6 @@ function catchSingleBox() {
 
 
 function initGame() {
-    function touchHandlerDummy(e) {
-        e.preventDefault();
-        return false;
-    }
-    document.addEventListener("touchstart", touchHandlerDummy, false);
-    document.addEventListener("touchmove", touchHandlerDummy, false);
-    document.addEventListener("touchend", touchHandlerDummy, false);
     makeRandomColors();
     screenSize();
     sec = getTime();
