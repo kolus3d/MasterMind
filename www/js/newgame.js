@@ -153,6 +153,25 @@ function catchBalls() {
         )
 }
 
+function catchCheck() {
+    checkButton = document.getElementById("checkbutton");
+    checkButton.addEventListener(
+        'drop',
+        function (ev) {
+            ev.preventDefault();
+            console.log("drop");
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    )
+    checkButton.addEventListener(
+        'dragover',
+        function (ev) {
+            ev.preventDefault();}
+            )
+}
+
+
 
 function catchSingleBox() {
     el = document.getElementsByClassName("singlebox");
@@ -181,6 +200,7 @@ function initGame() {
     screenSize();
     sec = getTime();
     time();
+    catchCheck();
     catchBalls();
     round = 0;
     catchSingleBox();
