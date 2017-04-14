@@ -142,57 +142,46 @@ function time() {
     setTimeout("time();", 1000);
 }
 
-/*function catchBalls() {
+function catchBalls() {
     orangeBall = document.getElementById("orange");
     orangeBall.addEventListener(
             'dragstart',
             function (ev) {
                 ev.dataTransfer.setData("text/plain", ev.target.id);
+                console.log(ev.target.id);
             }
         )
-}*/
-
-function catchBalls() {
-    $('#orange').draggable();
 }
 
 
-
-/*function catchSingleBox() {
+function catchSingleBox() {
     el = document.getElementsByClassName("singlebox");
     for (i = 0; i < el.length; i++) {
         el.item(i).addEventListener(
         'drop',
         function(ev) {
-            ev.preventDefault()
-            console.log("drop")
+            ev.preventDefault();
+            console.log("drop");
             var data = ev.dataTransfer.getData("text");
             ev.target.appendChild(document.getElementById(data));
         }
     )
-    }
-    el = document.getElementsByClassName("singlebox");
-    for (i = 0; i < el.length; i++) {
         el.item(i).addEventListener(
         'dragover',
         function (ev) {
-            ev.preventDefault()
-            // console.log("drag over")
-            // ev.dataTransfer.dropEffect = "move"
-        }
-    )
+            ev.preventDefault();}
+            )
     }
-}*/
+}
 
 
 
 function initGame() {
-    
     makeRandomColors();
     screenSize();
     sec = getTime();
     time();
     catchBalls();
     round = 0;
-
+    catchSingleBox();
 }
