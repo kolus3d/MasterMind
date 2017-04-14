@@ -1,11 +1,4 @@
 window.addEventListener("load", function () {
-    function touchHandlerDummy(e) {
-        e.preventDefault();
-        return false;
-    }
-    document.addEventListener("touchstart", touchHandlerDummy, false);
-    document.addEventListener("touchmove", touchHandlerDummy, false);
-    document.addEventListener("touchend", touchHandlerDummy, false);
     buttonNewGame = document.getElementById("newgame");
     buttonNewGame.addEventListener("click", initGame);
 });
@@ -189,6 +182,13 @@ function catchSingleBox() {
 
 
 function initGame() {
+    function touchHandlerDummy(e) {
+        e.preventDefault();
+        return false;
+    }
+    document.addEventListener("touchstart", touchHandlerDummy, false);
+    document.addEventListener("touchmove", touchHandlerDummy, false);
+    document.addEventListener("touchend", touchHandlerDummy, false);
     makeRandomColors();
     screenSize();
     sec = getTime();
@@ -196,4 +196,5 @@ function initGame() {
     catchBalls();
     round = 0;
     catchSingleBox();
+
 }
